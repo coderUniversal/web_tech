@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Sciences</title>
+    <link rel="stylesheet" href="stylex.css">
+</head>
+<body>
+    <h1>Hi! Muhammad Abdullah Ikhlaq. Are you ready for new journey?</h1>
+    <p><b>YES! I am ready.</b></p>
+    <h2>These are some tipics and areas to be covered during our journey</h2>
+    <ol>
+        <li>Python</li>
+        <ul>
+            <li>Pandas</li>
+            <li>Numpy</li>
+            <li>Matplotlib</li>
+            <li>Tableau</li>
+        </ul>
+        <li>Machine Learning</li>
+        <ul>
+            <li>Supervised Learning</li>
+            <li>UnSupervised Learning</li>
+            <li>Reinforcement Learning</li>
+        </ul>
+        <li>Stats</li>
+        <ul>
+            <li>Bayes Theorm</li>
+            <li>Navis Bayes</li>
+            <li>Regression assumptions</li>
+        </ul>
+        <li>Business Analysis</li>
+        <ul>
+            <li>F1 score</li>
+            <li>A/B testing</li>
+            <li>Residual Analysis</li>
+        </ul>
+    </ol>
+    <hr> 
+
+    
+    <table id="Report">
+        <caption>ML model training Report</caption>
+        <tr>
+            <th>Classifier</th>
+            <th>Accuracy</th>
+            <th>Precision</th>
+            <th>Recall</th>
+            <th>F1 score</th>
+            <th>Increses in Accuracy</th>
+        </tr>
+        <tr>
+            <td>GAUSSIAN NAIVE BAYES</td>
+            <td>66.4%</td>
+            <td>74.3%</td>
+            <td>79.8%</td>
+            <td>81.0</td>
+            <td>3.2%</td>
+
+        </tr>
+        <tr>
+            <td>DECISION TREE</td>
+            <td>61.4%</td>
+            <td>91.3%</td>
+            <td>59.8%</td>
+            <td>51.0</td>
+            <td>5.2%</td>
+
+        </tr>
+        <tr>
+            <td>LOGISTIC REGRESSION</td>
+            <td>70.4%</td>
+            <td>87.3%</td>
+            <td>48.8%</td>
+            <td>81.0</td>
+            <td>6.8%</td>
+
+        </tr>
+    </table>
+
+
+
+    
+
+    <a href="https://www.chatgpt.com">Click here to visit Chat Gpt</a>
+</body>
+</html>
