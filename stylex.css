@@ -1,0 +1,35 @@
+body {background-color: beige; font-size: 15px;}
+p {font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: chartreuse;}
+h1 {color: blueviolet; font-family: 'Times New Roman', Times, serif;}
+h2 {color: rgb(84, 83, 122);font-style: italic;}
+ul {color:darkmagenta  ;font-style: oblique;}
+ol {color: rgb(35, 69, 69);font-size: large;}
+
+#Report {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#Report td, #Report th {
+    border: 1px solid #d3aeae;
+    padding: 8px;
+    text-align:center;
+    
+}
+
+#Report tr:nth-child(even) {
+    background-color: #f9cfcf;
+}
+
+#Report tr:hover {
+    background-color: #eb8ed8;
+}
+
+#Report th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align:center;
+    background-color: #04AA6D;
+    color: white;
+}
