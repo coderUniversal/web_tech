@@ -1,0 +1,54 @@
+/* Custom Colors and Fonts */
+.bg-teal {
+    background-color: #3f685f;
+}
+
+.bg-nav-gray {
+    background-color: #bbbbbb;
+}
+
+.brand-font {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.nav-link {
+    color: #444;
+    font-size: 0.9rem;
+}
+
+.announcement-text {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    z-index: 100;
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    color: rgb(9, 222, 98);
+    background-color: #abc1b3;
+}
+
+/* Minor Icon Adjustments */
+.icon-spacing i {
+    margin-right: 15px;
+    cursor: pointer;
+}
