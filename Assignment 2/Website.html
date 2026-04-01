@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thread Theory</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="website.css">
+</head>
+
+<body>
+
+    <div class="logo-center">
+        <img src="Gemini_Generated_Image_ol4hvyol4hvyol4h.png" class="rounded-circle" alt="Thread Theory Logo" width="80" height="80">
+    </div>
+    
+    <div class="announcement-wrapper">
+        <i class="bi bi-chevron-left announcement-arrow" id="announcementPrev"></i>
+        
+        <div class="announcement-text" id="announcementSlider">
+            <span class="active-announcement">❄️ Shop Our Premium Winter Collection Boys & Girls Outfits Available Now!</span>
+            <span>🔥 Summer Sale is Live! Grab Your Favorites!</span>
+            <span>🎁 Free Shipping on Orders Over $50!</span>
+        </div>
+        
+        <i class="bi bi-chevron-right announcement-arrow" id="announcementNext"></i>
+        
+        <div class="social-icons">
+            <a href="https://wa.me/923073678124"><i class="bi bi-facebook fs-10"></i></a>
+            <a href="#"><i class="bi bi-instagram fs-10"></i></a>
+            <a href="#"><i class="bi bi-tiktok fs-10"></i></a>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            
+            <div class="menu-toggle" id="menuBtn">
+                <i class="bi bi-list" id="menuIcon"></i>
+            </div>
+
+            <a href="#" class="brand">Thread Theory</a>
+
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li class="mobile-bg-light"><a href="#" class="mobile-flex">Home</a></li>
+                    
+                    <li class="dropdown mobile-bg-white">
+                        <a href="#" class="hide-on-mobile">Boys <i class="bi bi-chevron-down ms-1"></i></a>
+                        <a href="#" class="mobile-flex hide-on-desktop mobile-dropdown-btn">Boys <i class="bi bi-chevron-right"></i></a>
+                        
+                        <ul class="dropdown-menu-custom hide-on-mobile">
+                            <li><a href="#">Trousers</a></li>
+                            <li><a href="#">Boys Tees</a></li>
+                            <li><a href="#">Boys Sets</a></li>
+                            <li><a href="#">Polo</a></li>
+                        </ul>
+
+                        <div class="mobile-sub-menu">
+                            <div class="mobile-sub-header mobile-bg-light back-btn">
+                                <i class="bi bi-arrow-left"></i> Boys
+                            </div>
+                            <ul class="mobile-sub-links">
+                                <li class="mobile-bg-white"><a href="#" class="mobile-flex">Trousers</a></li>
+                                <li class="mobile-bg-white"><a href="#" class="mobile-flex">Boys Tees</a></li>
+                                <li class="mobile-bg-white"><a href="#" class="mobile-flex">Boys Sets</a></li>
+                                <li class="mobile-bg-white"><a href="#" class="mobile-flex">Polo</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    
+                    <li class="dropdown mobile-bg-light">
+                        <a href="#" class="hide-on-mobile">Girls <i class="bi bi-chevron-down ms-1"></i></a>
+                        <a href="#" class="mobile-flex hide-on-desktop mobile-dropdown-btn">Girls <i class="bi bi-chevron-right"></i></a>
+                        
+                        <ul class="dropdown-menu-custom hide-on-mobile">
+                            <li><a href="#">Trousers</a></li>
+                            <li><a href="#">Girls Tees</a></li>
+                        </ul>
+
+                        <div class="mobile-sub-menu">
+                            <div class="mobile-sub-header mobile-bg-light back-btn">
+                                <i class="bi bi-arrow-left"></i> Girls
+                            </div>
+                            <ul class="mobile-sub-links">
+                                <li class="mobile-bg-white"><a href="#" class="mobile-flex">Trousers</a></li>
+                                <li class="mobile-bg-white"><a href="#" class="mobile-flex">Girls Tees</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    
+                    <li class="dropdown mobile-bg-white">
+                        <a href="#" class="hide-on-mobile">Thread Theory <i class="bi bi-chevron-down ms-1"></i></a>
+                        <a href="#" class="mobile-flex hide-on-desktop mobile-dropdown-btn">Thread Theory <i class="bi bi-chevron-right"></i></a>
+                        
+                        <ul class="dropdown-menu-custom hide-on-mobile">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Return & Refund Policy</a></li>
+                            <li><a href="#">Shipping Policy</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+
+                        <div class="mobile-sub-menu">
+                            <div class="mobile-sub-header mobile-bg-light back-btn">
+                                <i class="bi bi-arrow-left"></i> Thread Theory
+                            </div>
+                            <ul class="mobile-sub-links">
+                                <li class="mobile-bg-white"><a href="#" class="mobile-flex">About Us</a></li>
+                                <li class="mobile-bg-white"><a href="#" class="mobile-flex">Contact Us</a></li>
+                                <li class="mobile-bg-white"><a href="#" class="mobile-flex">Return & Refund Policy</a></li>
+                                <li class="mobile-bg-white"><a href="#" class="mobile-flex">Shipping Policy</a></li>
+                                <li class="mobile-bg-white"><a href="#" class="mobile-flex">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="mobile-menu-footer hide-on-desktop">
+                    <a href="#" class="mobile-login"><i class="bi bi-person"></i> Log in</a>
+                    <div class="mobile-socials">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-icons">
+                <i class="bi bi-search"></i>
+                <i class="bi bi-person hide-on-mobile"></i>
+                <i class="bi bi-bag"></i>
+            </div>
+        </div>
+    </nav>
+
+    <img src="Banner.png" class="img-fluid w-100" alt="Summer Vibes">
+
+    <section class="container my-5">
+        <h2 class="mb-4">Boys Tees</h2>
+
+        <div class="custom-slider-wrapper">
+            <div class="custom-slider-track" id="productTrack">
+                
+                <div class="custom-slide">
+                    <div class="product-card">
+                        <span class="sale-badge">Sale</span>
+                        <div class="product-image">
+                            <img src="Image1.png" class="img1">
+                            <img src="Image5.png" class="img2">
+                        </div>
+                        <h6 class="mt-3">Minecraft Front Back Premium T-Shirt</h6>
+                        <p class="price">
+                            <span class="old-price">Rs.1,699</span>
+                            From Rs.899
+                        </p>
+                        <button class="choose-btn">Choose options</button>
+                    </div>
+                </div>
+
+                <div class="custom-slide">
+                    <div class="product-card">
+                        <span class="sale-badge">Sale</span>
+                        <div class="product-image">
+                            <img src="Image2.png" class="img1">
+                            <img src="Image7.png" class="img2">
+                        </div>
+                        <h6 class="mt-3">Minecraft 2 Front Back Premium T-Shirt</h6>
+                        <p class="price">
+                            <span class="old-price">Rs.1,699</span>
+                            From Rs.899
+                        </p>
+                        <button class="choose-btn">Choose options</button>
+                    </div>
+                </div>
+
+                <div class="custom-slide">
+                    <div class="product-card">
+                        <span class="sale-badge">Sale</span>
+                        <div class="product-image">
+                            <img src="Image3.png" class="img1">
+                            <img src="Image7.png" class="img2">
+                        </div>
+                        <h6 class="mt-3">Play to Win Premium T-Shirt</h6>
+                        <p class="price">
+                            <span class="old-price">Rs.1,699</span>
+                            From Rs.799
+                        </p>
+                        <button class="choose-btn">Choose options</button>
+                    </div>
+                </div>
+
+                <div class="custom-slide">
+                    <div class="product-card">
+                        <span class="sale-badge">Sale</span>
+                        <div class="product-image">
+                            <img src="Image4.png" class="img1">
+                            <img src="Image5.png" class="img2">
+                        </div>
+                        <h6 class="mt-3">Bluey Premium T-Shirt</h6>
+                        <p class="price">
+                            <span class="old-price">Rs.1,699</span>
+                            From Rs.799
+                        </p>
+                        <button class="choose-btn">Choose options</button>
+                    </div>
+                </div>
+
+                <div class="custom-slide">
+                    <div class="product-card">
+                        <span class="sale-badge">Sale</span>
+                        <div class="product-image">
+                            <img src="S10.png" class="img1">
+                            <img src="S11.png" class="img2">
+                        </div>
+                        <h6 class="mt-3">Bluey Premium T-Shirt</h6>
+                        <p class="price">
+                            <span class="old-price">Rs.1,699</span>
+                            From Rs.799
+                        </p>
+                        <button class="choose-btn">Choose options</button>
+                    </div>
+                </div>
+
+                <div class="custom-slide">
+                    <div class="product-card">
+                        <span class="sale-badge">Sale</span>
+                        <div class="product-image">
+                            <img src="S16.png" class="img1">
+                            <img src="S17.png" class="img2">
+                        </div>
+                        <h6 class="mt-3">Bluey Premium T-Shirt</h6>
+                        <p class="price">
+                            <span class="old-price">Rs.1,699</span>
+                            From Rs.799
+                        </p>
+                        <button class="choose-btn">Choose options</button>
+                    </div>
+                </div>
+
+            </div> 
+
+            <div class="slider-controls">
+                <div class="arrow-btn" id="prevBtn"><i class="bi bi-chevron-left"></i></div>
+                <div class="slide-numbers" id="slideCount">1 / 6</div>
+                <div class="arrow-btn" id="nextBtn"><i class="bi bi-chevron-right"></i></div>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-4">
+            <button class="view-all">View all</button>
+        </div>
+
+    </section>
+
+    <a href="https://wa.me/923073678124" class="whatsapp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <script>
+        // 1. Mobile Menu Logic
+        const toggleBtn = document.getElementById("menuBtn");
+        const navMenu = document.getElementById("navMenu");
+        const menuIcon = document.getElementById("menuIcon");
+
+        toggleBtn.addEventListener("click", () => {
+            navMenu.classList.toggle("mobile-open");
+            
+            if (navMenu.classList.contains("mobile-open")) {
+                menuIcon.classList.remove("bi-list");
+                menuIcon.classList.add("bi-x-lg"); 
+                
+                // NEW: Lock the background website from scrolling
+                document.body.style.overflow = 'hidden';
+            } else {
+                menuIcon.classList.remove("bi-x-lg");
+                menuIcon.classList.add("bi-list"); 
+                
+                // NEW: Unlock the background website
+                document.body.style.overflow = 'auto';
+                
+                setTimeout(() => {
+                    document.querySelectorAll('.mobile-sub-menu.active').forEach(menu => {
+                        menu.classList.remove('active');
+                    });
+                }, 400);
+            }
+        });
+
+        // 2. Mobile Sub-Menu Slide Logic
+        const mobileDropdownBtns = document.querySelectorAll('.mobile-dropdown-btn');
+        const backBtns = document.querySelectorAll('.back-btn');
+
+        mobileDropdownBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const subMenu = btn.parentElement.querySelector('.mobile-sub-menu');
+                subMenu.classList.add('active');
+            });
+        });
+
+        backBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const subMenu = btn.closest('.mobile-sub-menu');
+                subMenu.classList.remove('active');
+            });
+        });
+
+        // 3. Announcement Bar Logic
+        const annSpans = document.querySelectorAll('#announcementSlider span');
+        let annIndex = 0;
+        let annTimer;
+
+        function showAnnouncement(index) {
+            annSpans.forEach(span => span.classList.remove('active-announcement'));
+            
+            if (index >= annSpans.length) {
+                annIndex = 0;
+            } else if (index < 0) {
+                annIndex = annSpans.length - 1;
+            } else {
+                annIndex = index;
+            }
+            
+            annSpans[annIndex].classList.add('active-announcement');
+        }
+
+        function nextAnn() {
+            showAnnouncement(annIndex + 1);
+            resetAnnTimer();
+        }
+
+        function prevAnn() {
+            showAnnouncement(annIndex - 1);
+            resetAnnTimer();
+        }
+
+        function startAnnTimer() {
+            annTimer = setInterval(() => { showAnnouncement(annIndex + 1); }, 4000);
+        }
+
+        function resetAnnTimer() {
+            clearInterval(annTimer);
+            startAnnTimer();
+        }
+
+        document.getElementById('announcementNext').addEventListener('click', nextAnn);
+        document.getElementById('announcementPrev').addEventListener('click', prevAnn);
+        startAnnTimer();
+
+        // 4. Custom Product Slider Logic
+        const track = document.getElementById('productTrack');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const slideCount = document.getElementById('slideCount');
+        const slides = document.querySelectorAll('.custom-slide');
+        const totalSlides = slides.length;
+
+        function updatePagination() {
+            const slideWidth = slides[0].offsetWidth + 25; 
+            const visibleSlides = Math.round(track.clientWidth / slideWidth);
+            let totalPages = totalSlides - visibleSlides + 1;
+            
+            if (totalPages < 1) totalPages = 1; 
+
+            const currentIndex = Math.round(track.scrollLeft / slideWidth) + 1;
+            slideCount.innerText = `${currentIndex} / ${totalPages}`;
+        }
+
+        track.addEventListener('scroll', updatePagination);
+
+        nextBtn.addEventListener('click', () => {
+            const slideWidth = slides[0].offsetWidth + 25;
+            track.scrollBy({ left: slideWidth, behavior: 'smooth' });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            const slideWidth = slides[0].offsetWidth + 25;
+            track.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+        });
+        
+        updatePagination();
+    </script>
+
+</body>
+</html>
