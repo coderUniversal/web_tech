@@ -1,0 +1,116 @@
+<%- include('../partials/admin-header', { title: 'Dashboard' }) %>
+
+<!-- SUCCESS ALERT -->
+<% if (successMsg) { %>
+    <div class="alert alert-success" id="successAlert">
+        ✅ <%= successMsg %>
+    </div>
+<% } %>
+
+<!-- STAT CARDS -->
+<div class="stat-cards">
+
+    <div class="stat-card">
+        <div class="stat-icon">📦</div>
+        <div class="stat-info">
+            <h3><%= products.length %></h3>
+            <p>Total Products</p>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">🏷️</div>
+        <div class="stat-info">
+            <h3><%= [...new Set(products.map(p => p.category))].length %></h3>
+            <p>Categories</p>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">⚠️</div>
+        <div class="stat-info">
+            <h3><%= products.filter(p => p.stock < 5).length %></h3>
+            <p>Low Stock Items</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- PRODUCTS TABLE -->
+<div class="table-container">
+    <div class="table-header">
+        <h2>All Products</h2>
+        <a href="/admin/add" class="btn btn-primary">+ Add New Product</a>
+    </div>
+
+    <% if (products.length === 0) { %>
+        <div class="empty-state">
+            <p>No products found. <a href="/admin/add">Add your first product</a>.</p>
+        </div>
+    <% } else { %>
+        <table class="products-table">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Rating</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% products.forEach(product => { %>
+                <tr>
+                    <!-- IMAGE -->
+                    <td>
+                        <img 
+                            src="/uploads/<%= product.image %>" 
+                            alt="<%= product.name %>"
+                            class="product-thumb"
+                        >
+                    </td>
+
+                    <!-- NAME -->
+                    <td><strong><%= product.name %></strong></td>
+
+                    <!-- CATEGORY -->
+                    <td>
+                        <span class="category-badge"><%= product.category %></span>
+                    </td>
+
+                    <!-- PRICE -->
+                    <td>$<%= product.price.toFixed(2) %></td>
+
+                    <!-- STOCK -->
+                    <td>
+                        <span class="<%= product.stock < 5 ? 'stock-low' : 'stock-ok' %>">
+                            <%= product.stock %>
+                        </span>
+                    </td>
+
+                    <!-- RATING -->
+                    <td>⭐ <%= product.rating %></td>
+
+                    <!-- ACTIONS -->
+                    <td class="actions">
+                        <a href="/admin/edit/<%= product._id %>" class="btn btn-edit">Edit</a>
+
+                        <form 
+                            action="/admin/delete/<%= product._id %>" 
+                            method="POST" 
+                            style="display:inline;"
+                            onsubmit="return confirmDelete('<%= product.name %>')"
+                        >
+                            <button type="submit" class="btn btn-delete">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } %>
+</div>
+
+<%- include('../partials/admin-footer') %>

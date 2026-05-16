@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %> — Admin Panel</title>
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+
+<div class="admin-wrapper">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <h2>🛒 Admin</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li>
+                    <a href="/admin" class="nav-link">
+                        <span class="nav-icon">📊</span>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/add" class="nav-link">
+                        <span class="nav-icon">➕</span>
+                        Add Product
+                    </a>
+                </li>
+                <li>
+                    <a href="/" class="nav-link">
+                        <span class="nav-icon">🏪</span>
+                        View Store
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- MAIN CONTENT AREA -->
+    <div class="main-content">
+
+        <!-- TOP BAR -->
+        <div class="top-bar">
+            <h1 class="page-title"><%= title %></h1>
+            <div class="top-bar-right">
+                <span class="admin-badge">Admin Panel</span>
+            </div>
+        </div>
+
+        <!-- PAGE CONTENT STARTS HERE -->
+        <div class="content-area">
