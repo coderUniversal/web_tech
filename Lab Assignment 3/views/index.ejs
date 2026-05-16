@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thread Theory</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <!-- Flash Messages -->
+    <% if (error && error.length > 0) { %>
+      <div style="background:#fee2e2;color:#b91c1c;padding:10px 16px;border-left:4px solid #ef4444;font-size:14px;">
+        <%= error %>
+      </div>
+    <% } %>
+    <% if (success && success.length > 0) { %>
+      <div style="background:#dcfce7;color:#15803d;padding:10px 16px;border-left:4px solid #22c55e;font-size:14px;">
+        <%= success %>
+      </div>
+    <% } %>
+
+    <div class="logo-center">
+        <img src="/images/Gemini_Generated_Image_ol4hvyol4hvyol4h.png" class="rounded-circle" alt="Thread Theory Logo" width="80" height="80">
+    </div>
+    
+    <div class="announcement-wrapper">
+        <i class="bi bi-chevron-left announcement-arrow" id="announcementPrev"></i>
+        
+        <div class="announcement-text" id="announcementSlider">
+            <span class="active-announcement">❄️ Shop Our Premium Winter Collection Boys & Girls Outfits Available Now!</span>
+            <span>🔥 Summer Sale is Live! Grab Your Favorites!</span>
+            <span>🎁 Free Shipping on Orders Over $50!</span>
+        </div>
+        
+        <i class="bi bi-chevron-right announcement-arrow" id="announcementNext"></i>
+        
+        <div class="social-icons">
+            <a href="https://wa.me/923073678124"><i class="bi bi-facebook fs-10"></i></a>
+            <a href="#"><i class="bi bi-instagram fs-10"></i></a>
+            <a href="#"><i class="bi bi-tiktok fs-10"></i></a>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            
+            <div class="menu-toggle" id="menuBtn">
+                <i class="bi bi-list" id="menuIcon"></i>
+            </div>
+
+            <a href="#" class="brand">Thread Theory</a>
+
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li class="mobile-bg-light"><a href="#" class="mobile-flex">Home</a></li>
+                    
+                    <li class="dropdown mobile-bg-white">
+                        <a href="#" class="hide-on-mobile">Boys <i class="bi bi-chevron-down ms-1"></i></a>
+                        <a href="#" class="mobile-flex hide-on-desktop mobile-dropdown-btn">Boys <i class="bi bi-chevron-right"></i></a>
+                        
+                        <ul class="dropdown-menu-custom hide-on-mobile">
+                            <li><a href="#">Trousers</a></li>
+                            <li><a href="#">Boys Tees</a></li>
+                            <li><a href="#">Boys Sets</a></li>
+                            <li><a href="#">Polo</a></li>
+                        </ul>
+
+                        <div class="mobile-sub-menu">
+                            <div class="mobile-sub-header mobile-bg-light back-btn">
+                                <i class="bi bi-arrow-left"></i> Boys
+                            </div>
+                            <ul class="mobile-sub-links">
+                                <li class="mobile-bg-white"><a href="#" class="mobile-flex">Trousers</a></li>
+                                <li class="mobile-bg-white"><a href="#" class="mobile-flex">Boys Tees</a></li>
+                                <li class="mobile-bg-white"><a href="#" class="mobile-flex">Boys Sets</a></li>
+                                <li class="mobile-bg-white"><a href="#" class="mobile-flex">Polo</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    
+                    <li class="dropdown mobile-bg-light">
+                        <a href="#" class="hide-on-mobile">Girls <i class="bi bi-chevron-down ms-1"></i></a>
+                        <a href="#" class="mobile-flex hide-on-desktop mobile-dropdown-btn">Girls <i class="bi bi-chevron-right"></i></a>
+                        
+                        <ul class="dropdown-menu-custom hide-on-mobile">
+                            <li><a href="#">Trousers</a></li>
+                            <li><a href="#">Girls Tees</a></li>
+                        </ul>
+
+                        <div class="mobile-sub-menu">
+                            <div class="mobile-sub-header mobile-bg-light back-btn">
+                                <i class="bi bi-arrow-left"></i> Girls
+                            </div>
+                            <ul class="mobile-sub-links">
+                                <li class="mobile-bg-white"><a href="#" class="mobile-flex">Trousers</a></li>
+                                <li class="mobile-bg-white"><a href="#" class="mobile-flex">Girls Tees</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    
+                    <li class="dropdown mobile-bg-white">
+                        <a href="#" class="hide-on-mobile">Thread Theory <i class="bi bi-chevron-down ms-1"></i></a>
+                        <a href="#" class="mobile-flex hide-on-desktop mobile-dropdown-btn">Thread Theory <i class="bi bi-chevron-right"></i></a>
+                        
+                        <ul class="dropdown-menu-custom hide-on-mobile">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Return & Refund Policy</a></li>
+                            <li><a href="#">Shipping Policy</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+
+                        <div class="mobile-sub-menu">
+                            <div class="mobile-sub-header mobile-bg-light back-btn">
+                                <i class="bi bi-arrow-left"></i> Thread Theory
+                            </div>
+                            <ul class="mobile-sub-links">
+                                <li class="mobile-bg-white"><a href="#" class="mobile-flex">About Us</a></li>
+                                <li class="mobile-bg-white"><a href="#" class="mobile-flex">Contact Us</a></li>
+                                <li class="mobile-bg-white"><a href="#" class="mobile-flex">Return & Refund Policy</a></li>
+                                <li class="mobile-bg-white"><a href="#" class="mobile-flex">Shipping Policy</a></li>
+                                <li class="mobile-bg-white"><a href="#" class="mobile-flex">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- Mobile Menu Footer — dynamic -->
+                <div class="mobile-menu-footer hide-on-desktop">
+                    <% if (currentUser) { %>
+                        <span class="mobile-login"><i class="bi bi-person"></i> <%= currentUser.name %></span>
+                        <a href="/auth/logout" class="mobile-login" style="color:red;">
+                            <i class="bi bi-box-arrow-right"></i> Logout
+                        </a>
+                    <% } else { %>
+                        <a href="/auth/login" class="mobile-login"><i class="bi bi-person"></i> Log in</a>
+                    <% } %>
+                    <div class="mobile-socials">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desktop Nav Icons — dynamic -->
+            <div class="nav-icons">
+                <i class="bi bi-search"></i>
+                <% if (currentUser) { %>
+                    <span class="hide-on-mobile" style="font-size:13px;font-weight:600;color:#333;">
+                        <%= currentUser.name %>
+                    </span>
+                    <a href="/auth/logout" class="hide-on-mobile" style="font-size:13px;color:red;text-decoration:none;">
+                        <i class="bi bi-box-arrow-right"></i>
+                    </a>
+                <% } else { %>
+                    <a href="/auth/login" class="hide-on-mobile">
+                        <i class="bi bi-person" style="color:#333;"></i>
+                    </a>
+                <% } %>
+                <i class="bi bi-bag"></i>
+            </div>
+        </div>
+    </nav>
+
+    <img src="/images/Banner.png" class="img-fluid w-100" alt="Summer Vibes">
+
+    <section class="container my-5">
+        <h2 class="mb-4">Boys Tees</h2>
+
+        <div class="custom-slider-wrapper">
+            <div class="custom-slider-track" id="productTrack">
+                
+                <div class="custom-slide">
+                    <div class="product-card">
+                        <span class="sale-badge">Sale</span>
+                        <div class="product-image">
+                            <img src="/images/Image1.png" class="img1">
+                            <img src="/images/Image5.png" class="img2">
+                        </div>
+                        <h6 class="mt-3">Minecraft Front Back Premium T-Shirt</h6>
+                        <p class="price">
+                            <span class="old-price">Rs.1,699</span>
+                            From Rs.899
+                        </p>
+                        <button class="choose-btn">Choose options</button>
+                    </div>
+                </div>
+
+                <div class="custom-slide">
+                    <div class="product-card">
+                        <span class="sale-badge">Sale</span>
+                        <div class="product-image">
+                            <img src="/images/Image2.png" class="img1">
+                            <img src="/images/Image7.png" class="img2">
+                        </div>
+                        <h6 class="mt-3">Minecraft 2 Front Back Premium T-Shirt</h6>
+                        <p class="price">
+                            <span class="old-price">Rs.1,699</span>
+                            From Rs.899
+                        </p>
+                        <button class="choose-btn">Choose options</button>
+                    </div>
+                </div>
+
+                <div class="custom-slide">
+                    <div class="product-card">
+                        <span class="sale-badge">Sale</span>
+                        <div class="product-image">
+                            <img src="/images/Image3.png" class="img1">
+                            <img src="/images/Image7.png" class="img2">
+                        </div>
+                        <h6 class="mt-3">Play to Win Premium T-Shirt</h6>
+                        <p class="price">
+                            <span class="old-price">Rs.1,699</span>
+                            From Rs.799
+                        </p>
+                        <button class="choose-btn">Choose options</button>
+                    </div>
+                </div>
+
+                <div class="custom-slide">
+                    <div class="product-card">
+                        <span class="sale-badge">Sale</span>
+                        <div class="product-image">
+                            <img src="/images/Image4.png" class="img1">
+                            <img src="/images/Image5.png" class="img2">
+                        </div>
+                        <h6 class="mt-3">Bluey Premium T-Shirt</h6>
+                        <p class="price">
+                            <span class="old-price">Rs.1,699</span>
+                            From Rs.799
+                        </p>
+                        <button class="choose-btn">Choose options</button>
+                    </div>
+                </div>
+
+                <div class="custom-slide">
+                    <div class="product-card">
+                        <span class="sale-badge">Sale</span>
+                        <div class="product-image">
+                            <img src="/images/S10.png" class="img1">
+                            <img src="/images/S11.png" class="img2">
+                        </div>
+                        <h6 class="mt-3">Bluey Premium T-Shirt</h6>
+                        <p class="price">
+                            <span class="old-price">Rs.1,699</span>
+                            From Rs.799
+                        </p>
+                        <button class="choose-btn">Choose options</button>
+                    </div>
+                </div>
+
+                <div class="custom-slide">
+                    <div class="product-card">
+                        <span class="sale-badge">Sale</span>
+                        <div class="product-image">
+                            <img src="/images/S16.png" class="img1">
+                            <img src="/images/S17.png" class="img2">
+                        </div>
+                        <h6 class="mt-3">Bluey Premium T-Shirt</h6>
+                        <p class="price">
+                            <span class="old-price">Rs.1,699</span>
+                            From Rs.799
+                        </p>
+                        <button class="choose-btn">Choose options</button>
+                    </div>
+                </div>
+
+            </div> 
+
+            <div class="slider-controls">
+                <div class="arrow-btn" id="prevBtn"><i class="bi bi-chevron-left"></i></div>
+                <div class="slide-numbers" id="slideCount">1 / 6</div>
+                <div class="arrow-btn" id="nextBtn"><i class="bi bi-chevron-right"></i></div>
+            </div>
+
+        </div>
+        <div class="text-center mt-4">
+            <a href="/products" class="text-decoration-none">
+                <button class="view-all">View all</button>
+            </a>
+        </div>
+
+    </section>
+
+    <a href="https://wa.me/923073678124" class="whatsapp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <footer class="custom-footer">
+
+    <div class="newsletter-section">
+        <h2>
+            Subscribe To Our Newsletter & Get Latest Discount Updates
+        </h2>
+
+        <div class="newsletter-box">
+            <input type="email" placeholder="Email">
+            <button>
+                <i class="bi bi-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="footer-content container">
+
+        <div class="footer-left">
+            <h3>Threads Theory</h3>
+
+            <p>
+                Thread Theory is a premium kids clothing brand offering
+                stylish and comfortable collections. Quality and care
+                in every piece
+            </p>
+
+            <h5>Email: threadtheorypkofficial@gmail.com</h5>
+
+            <h5>Whatsapp +923194103183</h5>
+        </div>
+
+        <div class="footer-right">
+            <h3>Quick links</h3>
+
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Return & Refund Policy</a></li>
+                <li><a href="#">Shipping Policy</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    </footer>
+
+   <script src="/js/script.js"></script>
+
+</body>
+</html>
