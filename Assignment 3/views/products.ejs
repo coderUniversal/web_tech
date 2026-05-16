@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thread Theory Products</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+
+    <nav class="navbar">
+        <div class="container nav-container">
+
+            <a href="/" class="brand">
+                Thread Theory
+            </a>
+
+            <div class="nav-icons">
+                <i class="bi bi-search"></i>
+                <i class="bi bi-person"></i>
+                <i class="bi bi-bag"></i>
+            </div>
+
+        </div>
+    </nav>
+
+
+
+    <!-- ===== PRODUCTS SECTION ===== -->
+
+    <section class="container my-5 products-page">
+
+        <h2 class="mb-4">
+            Our Collection
+        </h2>
+
+        <!-- ===== FILTERS ===== -->
+
+        <form action="/products"
+              method="GET"
+              class="row g-3 mb-5">
+
+            <!-- SEARCH -->
+
+            <div class="col-md-3">
+
+                <input
+                    type="text"
+                    name="search"
+                    class="form-control"
+                    placeholder="Search products..."
+                    value="<%= search %>"
+                >
+
+            </div>
+
+            <!-- CATEGORY -->
+
+            <div class="col-md-2">
+
+                <select
+                    name="category"
+                    class="form-select"
+                >
+
+                    <option value="">
+                        All Categories
+                    </option>
+
+                    <% categories.forEach(function(cat){ %>
+
+                        <option
+                            value="<%= cat %>"
+                            <%= category === cat ? "selected" : "" %>
+                        >
+                            <%= cat %>
+                        </option>
+
+                    <% }) %>
+
+                </select>
+
+            </div>
+
+            <!-- MIN PRICE -->
+
+            <div class="col-md-2">
+
+                <input
+                    type="number"
+                    name="minPrice"
+                    class="form-control"
+                    placeholder="Min Price"
+                    value="<%= minPrice %>"
+                >
+
+            </div>
+
+            <!-- MAX PRICE -->
+
+            <div class="col-md-2">
+
+                <input
+                    type="number"
+                    name="maxPrice"
+                    class="form-control"
+                    placeholder="Max Price"
+                    value="<%= maxPrice %>"
+                >
+
+            </div>
+
+            <!-- BUTTONS -->
+
+            <div class="col-md-3 d-flex gap-2">
+
+                <button
+                    type="submit"
+                    class="btn btn-dark w-100"
+                >
+                    Apply
+                </button>
+
+                <a
+                    href="/products"
+                    class="btn btn-outline-dark w-100"
+                >
+                    Clear
+                </a>
+
+            </div>
+
+        </form>
+
+        <!-- ===== RESULTS INFO ===== -->
+
+        <p class="mb-4">
+
+            Showing
+            <strong><%= products.length %></strong>
+            of
+            <strong><%= totalProducts %></strong>
+            products
+
+        </p>
+
+        <!-- ===== NO PRODUCTS ===== -->
+
+        <% if(products.length === 0){ %>
+
+            <div class="text-center py-5">
+
+                <h4>
+                    No products found
+                </h4>
+
+                <a href="/products"
+                   class="btn btn-dark mt-3">
+                    View All Products
+                </a>
+
+            </div>
+
+        <% } else { %>
+
+        <!-- ===== PRODUCT GRID ===== -->
+
+        <div class="row">
+
+            <% products.forEach(function(product){ %>
+
+                <div class="col-lg-3 col-md-6 mb-5">
+
+                    <div class="product-card">
+
+                        <% if(product.sale){ %>
+
+                            <span class="sale-badge">
+                                Sale
+                            </span>
+
+                        <% } %>
+
+
+                        <!-- PRODUCT IMAGE -->
+                        <div class="product-image <%= product.image2 ? 'hover-swap' : '' %>">
+
+                            <img
+                                src="/images/<%= product.image %>"
+                                class="img1"
+                                alt="<%= product.name %>"
+                            >
+
+                            <% if(product.image2){ %>
+                                <img
+                                    src="/images/<%= product.image2 %>"
+                                    class="img2"
+                                    alt="<%= product.name %>"
+                                >
+                            <% } %>
+
+                        </div>
+
+                        <!-- PRODUCT NAME -->
+
+                        <h6 class="mt-3">
+
+                            <%= product.name %>
+
+                        </h6>
+
+                        <!-- PRICE -->
+
+                        <p class="price">
+
+                            <% if(product.oldPrice){ %>
+
+                                <span class="old-price">
+
+                                    Rs.<%= product.oldPrice %>
+
+                                </span>
+
+                            <% } %>
+
+                            Rs.<%= product.price %>
+
+                        </p>
+
+                        <!-- CATEGORY -->
+
+                        <p class="mb-1">
+
+                            Category:
+                            <strong>
+                                <%= product.category %>
+                            </strong>
+
+                        </p>
+
+                        <!-- RATING -->
+
+                        <div class="mb-2">
+
+                            <% for(let i = 1; i <= 5; i++){ %>
+
+                                <i class="bi bi-star-fill
+                                <%= i <= Math.round(product.rating)
+                                ? 'text-warning'
+                                : 'text-secondary' %>">
+                                </i>
+
+                            <% } %>
+
+                            (<%= product.rating %>)
+
+                        </div>
+
+                        <!-- STOCK -->
+
+                        <p class="mb-3">
+
+                            <% if(product.stock > 10){ %>
+
+                                <span class="text-success">
+                                    In Stock
+                                </span>
+
+                            <% } else if(product.stock > 0){ %>
+
+                                <span class="text-warning">
+                                    Only <%= product.stock %> left
+                                </span>
+
+                            <% } else { %>
+
+                                <span class="text-danger">
+                                    Out of Stock
+                                </span>
+
+                            <% } %>
+
+                        </p>
+
+                        <!-- BUTTON -->
+
+                        <button class="choose-btn">
+
+                            Choose options
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            <% }) %>
+
+        </div>
+
+        <% } %>
+
+        <!-- ===== PAGINATION ===== -->
+
+        <% if(totalPages > 1){ %>
+
+        <div class="d-flex justify-content-center align-items-center gap-2 mt-5 flex-wrap">
+
+            <!-- PREVIOUS -->
+
+            <% if(currentPage > 1){ %>
+
+                <a
+                    href="/products?page=<%= currentPage - 1 %>&search=<%= search %>&category=<%= category %>&minPrice=<%= minPrice %>&maxPrice=<%= maxPrice %>"
+                    class="btn btn-outline-dark"
+                >
+                    Previous
+                </a>
+
+            <% } %>
+
+            <!-- PAGE NUMBERS -->
+
+            <% for(let i = 1; i <= totalPages; i++){ %>
+
+                <a
+                    href="/products?page=<%= i %>&search=<%= search %>&category=<%= category %>&minPrice=<%= minPrice %>&maxPrice=<%= maxPrice %>"
+                    class="btn <%= currentPage === i ? 'btn-dark' : 'btn-outline-dark' %>"
+                >
+                    <%= i %>
+                </a>
+
+            <% } %>
+
+            <!-- NEXT -->
+
+            <% if(currentPage < totalPages){ %>
+
+                <a
+                    href="/products?page=<%= currentPage + 1 %>&search=<%= search %>&category=<%= category %>&minPrice=<%= minPrice %>&maxPrice=<%= maxPrice %>"
+                    class="btn btn-outline-dark"
+                >
+                    Next
+                </a>
+
+            <% } %>
+
+        </div>
+
+        <% } %>
+
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+
+    <footer class="custom-footer">
+
+        <div class="footer-content container">
+
+            <div class="footer-left">
+
+                <h3>
+                    Thread Theory
+                </h3>
+
+                <p>
+                    Premium kids clothing brand
+                    with stylish and comfortable outfits.
+                </p>
+
+            </div>
+
+            <div class="footer-right">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#">
+                            About Us
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Contact Us
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
